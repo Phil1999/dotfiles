@@ -7,6 +7,17 @@ The nvim config uses [nvim-kickstart](https://github.com/nvim-lua/kickstart.nvim
 
 # Setup Instructions
 
+You'll need to download nvim/tmux as well as setup a nerdfont for your terminal. I use [Hack Nerd Font](https://www.nerdfonts.com/font-downloads). Otherwise there will be unrecognized symbols.
+
+Ubuntu:
+
+```bash
+sudo apt update
+sudo apt install neovim tmux
+```
+
+
+
 To use these configurations, you'll need to create symlinks from your system's configuration directories to the files/directories in this repository. Here's how to do it:
 
 ## Neovim Configuration

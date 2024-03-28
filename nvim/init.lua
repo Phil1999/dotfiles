@@ -161,6 +161,7 @@ vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 
 -- GUI
+vim.opt.termguicolors = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`

@@ -16,6 +16,21 @@ sudo apt update
 sudo apt install neovim tmux
 ```
 
+## Install External Dependencies (Kickstarter)
+
+    NOTE Backup your previous configuration (if any exists)
+
+### External Requirements:
+
+    Basic utils: git, make, unzip, C Compiler (gcc)
+    ripgrep
+    A Nerd Font: optional, provides various icons
+        if you have it set vim.g.have_nerd_font in init.lua to true
+    Language Setup:
+        If want to write Typescript, you need npm
+        If want to write Golang, you will need go
+        etc.
+
 
 
 To use these configurations, you'll need to create symlinks from your system's configuration directories to the files/directories in this repository. Here's how to do it:

@@ -39,18 +39,18 @@ To use these configurations, you'll need to create symlinks from your system's c
 
 First, ensure that the `~/.config/nvim` directory does not already exist or is backed up if you have existing configurations. Then, run:
 
-
+```bash
 ln -s ~/dotfiles/nvim ~/.config/nvim
-
+```
 
 This command creates a symlink that makes `nvim` use the configuration files located in `~/dotfiles/nvim`.
 
 ## Tmux Configuration
 
 Similarly, for `tmux`, ensure you do not have an existing `~/.tmux.conf` or back it up if necessary. Then, run:
-
+```bash
 ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-
+```
 
 This creates a symlink so that `tmux` will read its configuration from the `tmux.conf` file in your dotfiles.
 

@@ -55,8 +55,20 @@ ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 This creates a symlink so that `tmux` will read its configuration from the `tmux.conf` file in your dotfiles.
 
 ## Zsh Configuration
+
+See:
+https://github.com/romkatv/powerlevel10k
+for p10k
+
 ```bash
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 ```
 
+You'll also need to download the plugins
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-completions ~/.zsh/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/plugins/zsh-history-substring-search
+```
 

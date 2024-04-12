@@ -1,6 +1,6 @@
 # Introduction
 
-This repository contains simple but effective configurations for `tmux` and `Neovim` (nvim). To seamlessly integrate these configurations into your environment, I recommend using symbolic links (symlinks). This approach allows you to keep your configurations version-controlled and easily update them.
+This repository contains simple but effective configurations for your terminal enhancing the functionality and UI. To seamlessly integrate these configurations into your environment, I recommend using symbolic links (symlinks). This approach allows you to keep your configurations version-controlled and easily update them.
 
 Note:
 The nvim config uses [nvim-kickstart](https://github.com/nvim-lua/kickstart.nvim) as a base.

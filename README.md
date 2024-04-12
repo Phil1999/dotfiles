@@ -39,4 +39,9 @@ ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 This creates a symlink so that `tmux` will read its configuration from the `tmux.conf` file in your dotfiles.
 
+## Zsh Configuration
+
+ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+
+
 

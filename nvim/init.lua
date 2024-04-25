@@ -118,6 +118,29 @@ vim.opt.showmode = false
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
 
+if vim.fn.has 'wsl' == 1 then
+  if vim.fn.executable 'wl-copy' == 0 then
+    print "wl-clipboard not found, clipboard integration won't work"
+  else
+    vim.g.clipboard = {
+      name = 'wl-clipboard (wsl)',
+      copy = {
+        ['+'] = 'wl-copy --foreground --type text/plain',
+        ['*'] = 'wl-copy --foreground --primary --type text/plain',
+      },
+      paste = {
+        ['+'] = function()
+          return vim.fn.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { '' }, 1) -- '1' keeps empty lines
+        end,
+        ['*'] = function()
+          return vim.fn.systemlist('wl-paste --primary --no-newline|sed -e "s/\r$//"', { '' }, 1)
+        end,
+      },
+      cache_enabled = true,
+    }
+  end
+end
+
 -- Enable break indent
 vim.opt.breakindent = true
 
@@ -240,6 +263,7 @@ require('lazy').setup {
   'tpope/vim-obsession',
   'tpope/vim-sleuth',
   'tpope/vim-commentary',
+  'matze/vim-move',
 
   -- require 'custom.plugins.filetree',
   -- NOTE: Plugins can also be added by using a table,
@@ -329,12 +353,12 @@ require('lazy').setup {
     end,
   },
 
-  {
-    'itchyny/lightline.vim',
-    config = function()
-      vim.cmd [[let g:lightline = {'colorscheme': 'solarized-osaka'}]]
-    end,
-  },
+  -- {lightline
+  -- 'itchyny/lightline.vim',
+  -- config = function()
+  --   vim.cmd [[let g:lightline = {'colorscheme': 'solarized-osaka'}]]
+  -- end,
+  -- },
 
   {
     'utilyre/barbecue.nvim',
@@ -605,7 +629,7 @@ require('lazy').setup {
           },
         },
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -613,7 +637,7 @@ require('lazy').setup {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
         --
 
         lua_ls = {
